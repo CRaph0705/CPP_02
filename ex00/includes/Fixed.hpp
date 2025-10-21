@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 10:56:40 by rcochran          #+#    #+#             */
-/*   Updated: 2025/10/21 13:38:30 by rcochran         ###   ########.fr       */
+/*   Updated: 2025/10/21 15:10:53 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,18 @@ class Fixed {
 
 private :
 	int	part;
+	const static int fractionnal;
 
 public :
 	//default construct
 	Fixed(void);
+	
 	//cpy construct
-	Fixed(const Fixed&);
+	Fixed(const Fixed& f);
+
 	//operateur d'affectation
 	// A::operator=(const A&)
+	Fixed &operator=(const Fixed &f); // on definit un comportement a l'operateur =
 	
 	//destructor
 	~Fixed(void);
