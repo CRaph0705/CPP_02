@@ -14,7 +14,7 @@
 
 CC			= 	c++
 CFLAGS		=	-Wall -Werror -Wextra -Wno-unused -std=c++98
-NAME		=	toto
+NAME		=	canon3
 OBJ_DIR		=	obj/
 SRC			=	src/
 INCLUDES	=	-I ./includes
