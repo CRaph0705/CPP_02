@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 16:30:01 by rcochran          #+#    #+#             */
-/*   Updated: 2025/10/23 09:47:35 by rcochran         ###   ########.fr       */
+/*   Updated: 2025/10/27 10:42:24 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,14 @@ Fixed::Fixed(int input)
 {
 	std::cout << "Int constructor called." << std::endl;
 	this->_value = input << this->_fractionnal_part;
+
 	return ;
 }
 
 Fixed::Fixed(float input)
 {
 	std::cout << "Float constructor called." << std::endl;
-	this->_value = roundf(input * (1 << this->_fractionnal_part));
+	this->_value = roundf(input * (1 << this->_fractionnal_part)); // << 8 equivaut a multiplier par 256
 	return ;
 }
 
@@ -52,15 +53,13 @@ Fixed	&Fixed::operator=(const Fixed& f)
 
 int	Fixed::toInt ( void )const
 {
-	return (this-> _value >> this->_fractionnal_part);
+	return (this-> _value >> this->_fractionnal_part); // revient a diviser par 256 pour afficher a valeur proche de l'input de depart
 }
 
 float	Fixed::toFloat ( void )const
 {
 	return ((float)this->_value / (float)(1 << this->_fractionnal_part));
 }
-
-
 
 Fixed::~Fixed(void)
 {
