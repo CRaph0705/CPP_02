@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 09:58:38 by rcochran          #+#    #+#             */
-/*   Updated: 2025/10/27 14:15:18 by rcochran         ###   ########.fr       */
+/*   Updated: 2025/10/27 15:07:56 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,25 +161,25 @@ Fixed	Fixed::operator++(int fixed) // i++
 
 /* ========================================================================= */
 
-Fixed	Fixed::min(Fixed &f1, Fixed &f2)
+Fixed	&Fixed::min(Fixed &f1, Fixed &f2)
 {
 	//
 	return (f1._value > f2._value ? f2 : f1);
 }
 	
-Fixed	Fixed::max(Fixed &f1, Fixed &f2)
+Fixed	&Fixed::max(Fixed &f1, Fixed &f2)
 {
 	//
 	return (f1._value > f2._value ? f1 : f2);
 }
 
-Fixed	Fixed::min(const Fixed &f1, const Fixed &f2)
+Fixed	const &Fixed::min(const Fixed &f1, const Fixed &f2)
 {
 	//
 	return (f1._value > f2._value ? f2 : f1);
 }
 	
-Fixed	Fixed::max(const Fixed &f1, const Fixed &f2)
+Fixed	const &Fixed::max(const Fixed &f1, const Fixed &f2)
 {
 	//
 	return (f1._value > f2._value ? f1 : f2);
