@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 16:30:01 by rcochran          #+#    #+#             */
-/*   Updated: 2025/10/21 18:04:02 by rcochran         ###   ########.fr       */
+/*   Updated: 2025/10/23 09:47:35 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ const int Fixed::_fractionnal_part = 8;
 Fixed::Fixed(void)
 {
 	std::cout << "Default constructor called." << std::endl;
-	this->_part = 0;
+	this->_value = 0;
 	return ;
 }
 
@@ -32,32 +32,32 @@ Fixed::Fixed(const Fixed &f)
 Fixed::Fixed(int input)
 {
 	std::cout << "Int constructor called." << std::endl;
-	this->_part = input << this->_fractionnal_part;
+	this->_value = input << this->_fractionnal_part;
 	return ;
 }
 
 Fixed::Fixed(float input)
 {
 	std::cout << "Float constructor called." << std::endl;
-	this->_part = roundf(input * (1 << this->_fractionnal_part));
+	this->_value = roundf(input * (1 << this->_fractionnal_part));
 	return ;
 }
 
 Fixed	&Fixed::operator=(const Fixed& f)
 {
 	std::cout << "Copy assignment operator called." << std::endl;
-	this->_part = f.getRawBits();
+	this->_value = f.getRawBits();
 	return (*this);
 }
 
 int	Fixed::toInt ( void )const
 {
-	return (this-> _part >> this->_fractionnal_part);
+	return (this-> _value >> this->_fractionnal_part);
 }
 
 float	Fixed::toFloat ( void )const
 {
-	return ((float)this->_part / (float)(1 << this->_fractionnal_part));
+	return ((float)this->_value / (float)(1 << this->_fractionnal_part));
 }
 
 
@@ -70,13 +70,13 @@ Fixed::~Fixed(void)
 int	Fixed::getRawBits( void ) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
-	return (this->_part);
+	return (this->_value);
 }
 
 void	Fixed::setRawBits( int const raw )
 {
 	std::cout << "setRawBits member function called" << std::endl;
-	this->_part = raw;
+	this->_value = raw;
 }
 
 std::ostream& operator<<(std::ostream &stream, const Fixed &fixed)

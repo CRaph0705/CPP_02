@@ -6,7 +6,7 @@
 /*   By: rcochran <rcochran@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 16:29:31 by rcochran          #+#    #+#             */
-/*   Updated: 2025/10/21 18:01:26 by rcochran         ###   ########.fr       */
+/*   Updated: 2025/10/23 09:45:42 by rcochran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Fixed {
 private :
-	int	_part;
+	int	_value;
 	const static int _fractionnal_part;
 
 public :
